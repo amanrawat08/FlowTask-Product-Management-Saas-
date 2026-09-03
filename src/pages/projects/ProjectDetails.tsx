@@ -8,6 +8,7 @@ import {
   SquareUser,
 } from "lucide-react";
 import StatCard from "../../components/Dashboard/StatCard";
+import KanbanBoard from "./KanbanBoard";
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
   const project = projectsData.find((data) => data.id === Number(id));
@@ -112,8 +113,9 @@ const ProjectDetails = () => {
         </button>{" "}
       </div>
       <div className="mt-4">
-        <h4 className="text-lg font-semibold mb-5">Overview</h4>
-        <StatCard/>
+        {/*<h4 className="text-lg font-semibold mb-5">Overview</h4>
+        <StatCard/>*/}
+        <KanbanBoard/>
       </div>
       <div>
         <h4 className="text-lg font-semibold mb-5 mt-9">Recent Activity</h4>
