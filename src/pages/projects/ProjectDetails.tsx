@@ -9,10 +9,15 @@ import {
 } from "lucide-react";
 import StatCard from "../../components/Dashboard/StatCard";
 import KanbanBoard from "./KanbanBoard";
+import TeamMembers from "../team/TeamMembers";
+import { useState } from "react";
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
   const project = projectsData.find((data) => data.id === Number(id));
-  console.log(project);
+  
+
+  const [activeTab, setActiveTab] = useState("overview");
+
   return (
     <div className="card w-full rounded-md bg-white p-5 shadow-sm shadow-gray-200">
       <button
@@ -65,7 +70,7 @@ const ProjectDetails = () => {
         {/* Overview */}{" "}
         <button
           type="button"
-          className="relative border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-3 text-sm font-medium transition-colors hover:bg-[#F5F5F5] hover:text-[#06B6D4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className={`relative border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md   px-3 text-sm font-medium transition-colors hover:bg-[#F5F5F5] hover:text-[#06B6D4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === "overview" ? "bg-primary  text-white" : ""}`} onClick={() => setActiveTab("overview")}
         >
           {" "}
           <Target size={22} strokeWidth={2} className="text-cyan-500" />{" "}
@@ -74,7 +79,7 @@ const ProjectDetails = () => {
         {/* Board */}{" "}
         <button
           type="button"
-          className="relative  border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-3 text-sm font-medium transition-colors hover:bg-[#F5F5F5] hover:text-[#60A5FA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className={`relative  border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md   px-3 text-sm font-medium transition-colors hover:bg-primary hover:text-[#60A5FA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === "board" ? "bg-primary text-white" : ""}`} onClick={() => setActiveTab("board")}
         >
           {" "}
           <SquareKanban
@@ -87,7 +92,7 @@ const ProjectDetails = () => {
         {/* ClipboardList  */}{" "}
         <button
           type="button"
-          className="relative  border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-3 text-sm font-medium transition-colors hover:bg-[#F5F5F5] hover:text-[#FACC14] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className={`relative  border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md   px-3 text-sm font-medium transition-colors hover:bg-primary hover:text-[#FACC14] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === "tasks" ? "bg-primary text-white" : ""}`} onClick={() => setActiveTab("tasks")}
         >
           {" "}
           <ClipboardList
@@ -100,7 +105,7 @@ const ProjectDetails = () => {
         {/* Team */}{" "}
         <button
           type="button"
-          className="relative  border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-3 text-sm font-medium transition-colors hover:bg-[#F5F5F5] hover:text-[#FB923C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className={`relative  border border-gray-200 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-md   px-3 text-sm font-medium transition-colors hover:bg-primary hover:text-[#FB923C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${activeTab === "team" ? "bg-primary text-white" : ""}`} onClick={() => setActiveTab("team")}
         >
           {" "}
           <SquareUser
@@ -113,9 +118,10 @@ const ProjectDetails = () => {
         </button>{" "}
       </div>
       <div className="mt-4">
-        {/*<h4 className="text-lg font-semibold mb-5">Overview</h4>
-        <StatCard/>*/}
-        <KanbanBoard/>
+        {activeTab === "overview" && (<><h4 className="text-lg font-semibold mb-5">Overview</h4>
+        <StatCard/></>)}
+        {activeTab === "board" && <KanbanBoard/>}
+        {activeTab === "team" && <TeamMembers/>}
       </div>
       <div>
         <h4 className="text-lg font-semibold mb-5 mt-9">Recent Activity</h4>
