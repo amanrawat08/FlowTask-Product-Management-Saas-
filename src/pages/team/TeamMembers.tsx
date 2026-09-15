@@ -1,11 +1,13 @@
+import {   useNavigate } from "react-router-dom"
 import { profileData } from "../../store"
 
 const TeamMembers = () => {
+    const navigate = useNavigate();
   return (
     <div>
         <div className="flex items-center justify-between mb-4">
             <h4 className="text-lg font-semibold">Team Members</h4>
-            <button className="btn bg-primary text-white p-2 p-1 border rounded text-sm">Invite Member</button>
+            <button className="btn bg-primary text-white   p-1 border rounded text-sm">Invite Member</button>
         </div>
 
         {/* team member cards */}
@@ -27,10 +29,11 @@ const TeamMembers = () => {
                         <span className="text-sm text-gray-500">{member.statistics.projects} Projects</span>
                         <span className="text-sm text-gray-500">{member.statistics.tasks} Tasks</span>
                     </div>
-                    <div className="mt-2 text-xs underline font-medium cursor-pointer text-primary"> View Profile</div>
+                    <div className="mt-2 text-xs underline font-medium cursor-pointer text-primary" onClick={()=>navigate(`${member.id}`)}> View Profile</div>
                 </div>
             ))}
-        </div>
+        </div> 
+         
     </div>
   )
 }

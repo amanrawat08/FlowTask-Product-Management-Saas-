@@ -12,8 +12,7 @@ const TaskCard = ({
   t_Description,
   t_DueDate,
   t_Priority,
-  t_Assignee,
-  t_no,
+  t_Assignee, 
 }: TaskCardProps) => {
   return (
     <div className="   border border-gray-100 m-2 p-2  bg-white rounded">

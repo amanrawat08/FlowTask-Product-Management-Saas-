@@ -7,6 +7,10 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Projects from "../pages/projects/Projects";
 import ProjectDetails from "../pages/projects/ProjectDetails";
+import StatCard from "../components/Dashboard/StatCard";
+import KanbanBoard from "../pages/projects/KanbanBoard";
+import TeamMembers from "../pages/team/TeamMembers";
+import Profile from "../pages/profile/Profile";
 
 const Approutes = () => {
   return (
@@ -19,9 +23,14 @@ const Approutes = () => {
       <Route element={<DashboardLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:id" element={<ProjectDetails />} />
-      </Route>
-      <Route path="/projects" element={<div>Projects Page</div>} />
+        <Route path="/projects/:id" element={<ProjectDetails />}>
+          <Route index element={<StatCard />} />
+          <Route path="board" element={<KanbanBoard />} />
+          <Route path="task" element={<KanbanBoard />} />
+          <Route path="team" element={<TeamMembers />}></Route>
+          <Route path="team/:member_id" element={<Profile />} />
+        </Route> 
+      </Route> 
     </Routes>
   );
 };

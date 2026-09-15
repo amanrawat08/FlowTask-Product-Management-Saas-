@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import ProjectCard from "../../components/project/ProjectCard";
+import { Outlet } from "react-router-dom";
 const Projects = () => {
   
   return (
@@ -11,6 +12,7 @@ const Projects = () => {
         </button>
       </div>
       <ProjectCard/>
+      <Outlet/>
     </div>
   );
 };
