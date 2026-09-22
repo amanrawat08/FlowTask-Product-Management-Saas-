@@ -51,7 +51,7 @@ const Sidebar = () => {
           </button>
         </li>
         {/* Notification */}
-        <li className="w-full cursor-pointer whitespace-nowrap">
+        <li className="w-full cursor-pointer whitespace-nowrap" onClick={() => navigate("/notification")}>
           <button className="group flex size-full items-center   rounded-xs  p-2 py-3 font-semibold text-gray-700 transition-all ease-linear hover:bg-primary-light hover:shadow-inner focus:bg-gradient-to-r focus:from-primary focus:to-primary focus:text-white cursor-pointer  border-b-2 border-border">
             <BellRing
               size={24}
