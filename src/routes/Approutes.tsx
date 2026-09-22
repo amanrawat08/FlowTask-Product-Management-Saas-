@@ -28,8 +28,8 @@ const Approutes = () => {
           <Route path="board" element={<KanbanBoard />} />
           <Route path="task" element={<KanbanBoard />} />
           <Route path="team" element={<TeamMembers />}></Route>
-          <Route path="team/:member_id" element={<Profile />} />
         </Route> 
+          <Route path="/projects/:id/team/:member_id" element={<Profile />} />
       </Route> 
     </Routes>
   );
