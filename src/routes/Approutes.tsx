@@ -12,6 +12,7 @@ import KanbanBoard from "../pages/projects/KanbanBoard";
 import TeamMembers from "../pages/team/TeamMembers";
 import Profile from "../pages/profile/Profile";
 import Notifications from "../pages/notifications/Notifications";
+import MyTasks from "../pages/MyTasks/MyTasks";
 
 const Approutes = () => {
   return (
@@ -32,6 +33,7 @@ const Approutes = () => {
           <Route path="team" element={<TeamMembers />}></Route>
         </Route>
         <Route path="/projects/:id/team/:member_id" element={<Profile />} />
+        <Route path="/tasks" element={<MyTasks />} />
         <Route path="/notification" element={<Notifications />} />
       </Route>
     </Routes>

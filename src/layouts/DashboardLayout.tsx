@@ -6,10 +6,11 @@ import Sidebar from "../components/layouts/Sidebar"
  
 const DashboardLayout = () => {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background">
-        <div className="flex *:h-screen bg-background ">
+    <div className="flex min-h-screen w-full flex-col  ">
+        <div className="flex *:h-screen 
+         ">
             <Sidebar />
-            <div className="flex flex-1 flex-col bg-background">
+            <div className="flex flex-1 flex-col  ">
                 <Header />
                 <div className="p-4">
                     <Outlet/>

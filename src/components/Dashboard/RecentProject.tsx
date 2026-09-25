@@ -1,7 +1,7 @@
 const RecentProject = () => {
   return (
     <div className="card w-full rounded-md bg-white p-5 shadow-sm shadow-gray-50 mt-6" >
-        <h2 className="text-2xl font-bold mt-2 text-primary ">Recent Project</h2>
+        <h2 className="heading  font-bold mt-2   ">Recent Project</h2>
         <hr className="my-2 text-gray-300"  />
 
         <div className="overflow-x-auto">

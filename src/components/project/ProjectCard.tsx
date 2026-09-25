@@ -12,7 +12,7 @@ const ProjectCard = () => {
           className="card w-full rounded-md bg-white p-5 shadow-sm shadow-gray-200"
         >
           <div className="flex gap-2 items-center">
-            <h2 className="text-xl font-bold">{project.name}</h2>{" "}
+            <h2 className="text-[16px] font-bold">{project.name}</h2>{" "}
             <span className="text-primary text-bold cursor-pointer  " onClick={() => navigation(`/projects/${project.id}`)}>
               <MoveUpRight className="text-sm" />
             </span>

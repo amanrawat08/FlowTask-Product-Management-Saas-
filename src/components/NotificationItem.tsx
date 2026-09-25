@@ -1,4 +1,4 @@
-const NotificationItem = ({
+const NotificationItem:any = ({
   avatar,
   name,
   message,

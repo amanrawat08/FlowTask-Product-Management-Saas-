@@ -9,6 +9,7 @@ import {
   SquareUser,
 } from "lucide-react";
 const ProjectDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const project = projectsData.find((data) => data.id === Number(id));
 
@@ -16,13 +17,13 @@ const ProjectDetails = () => {
     <div className="card w-full rounded-md bg-white p-5 shadow-sm shadow-gray-200">
       <button
         className="flex items-center gap-1 text-primary hover:text-primary  cursor-pointer mb-4"
-        onClick={() => window.history.back()}
+        onClick={() => navigate("/projects")}
       >
         <ArrowLeft size={16} />
         Projects
       </button>
       <div className=" flex  justify-between items-center">
-        <h1 className="text-xl font-bold">{project?.name}</h1>
+        <h1 className="heading font-bold">{project?.name}</h1>
         <button className="btn btn-primary bg-primary text-white py-1 px-3 rounded cursor-pointer">
           Edit Project
         </button>
@@ -119,7 +120,7 @@ const ProjectDetails = () => {
         <Outlet />
       </div>
       <div>
-        <h4 className="text-lg font-semibold mb-5 mt-9">Recent Activity</h4>
+        <h4 className="heading font-bold mb-5 mt-9">Recent Activity</h4>
         <div className="card w-full   shadow-gray-200">
           <p className="text-gray-600 text-sm mt-4">
             Aman Completed the task "Design Landing Page" on 2023-07-15.
