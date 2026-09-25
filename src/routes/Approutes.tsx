@@ -13,6 +13,7 @@ import TeamMembers from "../pages/team/TeamMembers";
 import Profile from "../pages/profile/Profile";
 import Notifications from "../pages/notifications/Notifications";
 import MyTasks from "../pages/MyTasks/MyTasks";
+import Team from "../pages/team/Team";
 
 const Approutes = () => {
   return (
@@ -30,10 +31,13 @@ const Approutes = () => {
           <Route index element={<StatCard />} />
           <Route path="board" element={<KanbanBoard />} />
           <Route path="task" element={<KanbanBoard />} />
-          <Route path="team" element={<TeamMembers />}></Route>
+          <Route path="team" element={<TeamMembers isHeading={true} />}></Route>
         </Route>
         <Route path="/projects/:id/team/:member_id" element={<Profile />} />
         <Route path="/tasks" element={<MyTasks />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/team/:member_id" element={<Profile />} />
+        <Route path="/profile/:member_id" element={<Profile />} />
         <Route path="/notification" element={<Notifications />} />
       </Route>
     </Routes>

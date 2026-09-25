@@ -16,7 +16,7 @@ const Sidebar = () => {
             <LayoutDashboard
               size={24}
               className="group-focus:text-white"
-            />
+            />&nbsp;
             Dashboard
           </button>
         </li>
@@ -26,7 +26,7 @@ const Sidebar = () => {
             <FolderOpenDot
               size={24}
               className="group-focus:text-white"
-            />
+            />&nbsp;
             Projects
           </button>
         </li>
@@ -36,17 +36,17 @@ const Sidebar = () => {
             <ClipboardList
               size={24}
               className="group-focus:text-white"
-            />
+            />&nbsp;
             My Tasks
           </button>
         </li>
         {/* Team */}
-        <li className="w-full cursor-pointer whitespace-nowrap">
+        <li className="w-full cursor-pointer whitespace-nowrap" onClick={() => navigate("/team")}>
           <button className="group flex size-full items-center   rounded-xs  p-2 py-3 font-semibold text-gray-700 transition-all ease-linear hover:bg-primary-light hover:shadow-inner focus:bg-gradient-to-r focus:from-primary focus:to-primary focus:text-white cursor-pointer  border-b-2 border-border">
             <SquareUser
               size={24}
               className="group-focus:text-white"
-            />
+            />&nbsp;
             Team
           </button>
         </li>
@@ -56,17 +56,17 @@ const Sidebar = () => {
             <BellRing
               size={24}
               className="group-focus:text-white"
-            />
+            /> &nbsp;
             Notification
           </button>
         </li>
         {/* Profile */}
-        <li className="w-full cursor-pointer whitespace-nowrap">
+        <li className="w-full cursor-pointer whitespace-nowrap" onClick={() => navigate("/profile/2")}>
           <button className="group flex size-full items-center   rounded-xs  p-2 py-3 font-semibold text-gray-700 transition-all ease-linear hover:bg-primary-light hover:shadow-inner focus:bg-gradient-to-r focus:from-primary focus:to-primary focus:text-white cursor-pointer  border-b-2 border-border">
             <UserPen
               size={24}
               className="group-focus:text-white"
-            />
+            />&nbsp;
             Profile
           </button>
         </li>
@@ -78,7 +78,7 @@ const Sidebar = () => {
             <Settings
               size={24}
               className="group-focus:text-white"
-            />
+            />&nbsp;
             Settings
           </button>
         </li>
@@ -89,7 +89,7 @@ const Sidebar = () => {
             <LogOut
               size={24}
               className="group-focus:text-white"
-            />
+            />&nbsp;
             Logout
           </button>
         </li>

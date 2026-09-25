@@ -1,17 +1,17 @@
 import {   useNavigate } from "react-router-dom"
 import { profileData } from "../../store"
 
-const TeamMembers = () => {
+const TeamMembers = ({isHeading = true}) => {
     const navigate = useNavigate();
   return (
     <div>
-        <div className="flex items-center justify-between mb-4">
+        {isHeading && <div className="flex items-center justify-between mb-4">
             <h4 className="text-lg font-semibold">Team Members</h4>
             <button className="btn bg-primary text-white   p-1 border rounded text-sm">Invite Member</button>
-        </div>
+        </div>}
 
         {/* team member cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2   lg:grid-cols-3 gap-4">
             {profileData.map((member) => (
                 <div key={member.id} className="bg-white p-4 rounded shadow">
                     <div className="flex items-center gap-4 mb-2">
